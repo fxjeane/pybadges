@@ -30,7 +30,7 @@ gh-badges library
 """
 
 import base64
-import imghdr
+import filetype
 import mimetypes
 from typing import Optional
 import urllib.parse
@@ -102,7 +102,7 @@ def _embed_image(url: str) -> str:
     else:
         with open(url, 'rb') as f:
             image_data = f.read()
-        image_type = imghdr.what(None, image_data)
+        image_type = filetype.guess(None, image_data)
         if not image_type:
             mime_type, _ = mimetypes.guess_type(url, strict=False)
             if not mime_type:

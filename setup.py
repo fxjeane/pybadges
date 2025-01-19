@@ -76,6 +76,7 @@ setup(
             'fonttools>=3.26',
             'nox',
             'Pillow>=5',
+            'filetype==1.2.0',
             'pytest>=3.6',
             'xmldiff>=2.4'
         ],
